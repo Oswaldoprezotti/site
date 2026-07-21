@@ -1,0 +1,333 @@
+/* ============================================================
+   cybercrimesprezotti.com.br — folha de estilo do site
+   ============================================================ */
+
+:root {
+  --paper: #F5F6F8;
+  --surface: #FFFFFF;
+  --surface-2: #FBFAF9;
+  --ink: #16202E;
+  --muted: #5C6675;
+  --faint: #8A93A1;
+  --line: #E4E7EC;
+  --line-strong: #D3D8DF;
+  --accent: #8A2A3B;
+  --accent-ink: #6E1F2E;
+  --accent-soft: #F4E9EB;
+  --tech: #2F4A6B;
+  --tech-soft: #EAEFF5;
+
+  --serif: 'Iowan Old Style', 'Palatino Linotype', Palatino, 'Book Antiqua', Georgia, 'Times New Roman', serif;
+  --sans: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+
+  --measure: 65ch;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #0E141C;
+    --surface: #161E28;
+    --surface-2: #131A23;
+    --ink: #E9EDF2;
+    --muted: #9AA5B4;
+    --faint: #6C7787;
+    --line: #253040;
+    --line-strong: #33404F;
+    --accent: #D2818D;
+    --accent-ink: #E3A3AC;
+    --accent-soft: #2A1A1F;
+    --tech: #8CACCE;
+    --tech-soft: #182430;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 18px;
+  line-height: 1.68;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.wrap {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+a { color: var(--accent); text-underline-offset: 2px; text-decoration-thickness: 1px; }
+a:hover { color: var(--accent-ink); }
+
+.eyebrow {
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+/* ---------- Barra superior ---------- */
+.topbar {
+  border-bottom: 1px solid var(--line);
+  background: var(--surface);
+}
+.topbar .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+.brand {
+  font-family: var(--sans);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-decoration: none;
+}
+.brand:hover { color: var(--accent); }
+.topbar nav {
+  display: flex;
+  gap: 20px;
+  font-family: var(--sans);
+  font-size: 13.5px;
+}
+.topbar nav a { color: var(--muted); text-decoration: none; }
+.topbar nav a:hover { color: var(--accent); }
+
+/* ---------- Masthead (capa) ---------- */
+header.masthead {
+  border-bottom: 1px solid var(--line);
+  background:
+    radial-gradient(120% 140% at 100% 0%, var(--accent-soft) 0%, transparent 55%),
+    var(--surface);
+}
+.masthead-inner {
+  padding: 64px 24px 52px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+.kicker-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 22px;
+}
+.kicker-row .rule {
+  height: 1px;
+  flex: 1;
+  min-width: 24px;
+  background: var(--line-strong);
+}
+h1 {
+  font-size: clamp(2.1rem, 5.2vw, 3.3rem);
+  line-height: 1.06;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  margin: 0 0 20px;
+  max-width: 20ch;
+  text-wrap: balance;
+}
+h1 .em { color: var(--accent); font-style: italic; }
+.lede {
+  font-size: clamp(1.05rem, 2.2vw, 1.25rem);
+  color: var(--muted);
+  max-width: 54ch;
+  margin: 0;
+  line-height: 1.55;
+}
+.meta-row {
+  display: flex;
+  gap: 22px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+  font-family: var(--sans);
+  font-size: 13px;
+  color: var(--faint);
+}
+.meta-row b { color: var(--muted); font-weight: 600; }
+
+/* ---------- Seções da capa ---------- */
+main { padding: 24px 0 72px; }
+section.bloco { scroll-margin-top: 24px; margin-top: 56px; }
+.sec-head {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 14px;
+  margin-bottom: 26px;
+}
+.sec-num {
+  font-family: var(--sans);
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.04em;
+  padding-top: 6px;
+}
+h2.sec-title {
+  font-size: clamp(1.5rem, 3vw, 1.9rem);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+  margin: 0;
+  text-wrap: balance;
+}
+p { max-width: var(--measure); }
+.muted { color: var(--muted); }
+
+/* ---------- Lista de artigos ---------- */
+ul.artigos {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+ul.artigos li {
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--accent);
+  border-radius: 10px;
+  background: var(--surface);
+  padding: 22px 24px 20px;
+}
+ul.artigos .data {
+  font-family: var(--sans);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--faint);
+  display: block;
+  margin-bottom: 6px;
+}
+ul.artigos h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 0 0 8px;
+  line-height: 1.25;
+  letter-spacing: -0.005em;
+}
+ul.artigos h3 a { color: var(--ink); text-decoration: none; }
+ul.artigos h3 a:hover { color: var(--accent); }
+ul.artigos .resumo {
+  margin: 0;
+  font-size: 16px;
+  color: var(--muted);
+  max-width: none;
+}
+ul.artigos .ler {
+  display: inline-block;
+  margin-top: 12px;
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* ---------- Contato ---------- */
+ul.contato {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-family: var(--sans);
+  font-size: 15px;
+}
+ul.contato b { display: inline-block; min-width: 96px; color: var(--muted); font-weight: 600; }
+
+/* ---------- Página de artigo ---------- */
+.artigo-head { max-width: 960px; margin: 0 auto; padding: 56px 24px 44px; }
+.artigo-head h1 { max-width: 24ch; }
+article.artigo { max-width: 760px; margin: 0 auto; padding: 40px 24px 72px; }
+article.artigo h2 {
+  font-size: clamp(1.4rem, 2.6vw, 1.75rem);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 12px;
+  margin: 48px 0 22px;
+}
+article.artigo h2:first-child { margin-top: 0; }
+article.artigo p { margin: 0 0 18px; }
+article.artigo ul { max-width: var(--measure); padding-left: 22px; margin: 0 0 18px; }
+article.artigo li { margin-bottom: 10px; }
+article.artigo strong { font-weight: 600; }
+article.artigo em { font-style: italic; }
+
+/* Caixa do autor */
+.autor {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--surface);
+  padding: 20px 24px;
+  margin: 44px 0 0;
+  font-size: 16px;
+  color: var(--muted);
+}
+.autor p { max-width: none; margin: 0 0 10px; }
+.autor p:last-child { margin-bottom: 0; }
+.autor b { color: var(--ink); font-weight: 600; }
+
+/* Aviso / disclaimer */
+.disclaimer {
+  border: 1px solid var(--line-strong);
+  border-radius: 12px;
+  background: var(--surface-2);
+  padding: 22px 26px;
+  margin: 24px 0 0;
+}
+.disclaimer .eyebrow { color: var(--muted); }
+.disclaimer p { font-size: 15px; color: var(--muted); max-width: none; margin: 10px 0 0; }
+
+/* Referências */
+.refs { margin-top: 44px; }
+.refs h2 { font-size: 1.25rem; }
+.refs p {
+  font-size: 14px;
+  color: var(--muted);
+  max-width: none;
+  margin: 0 0 12px;
+  overflow-wrap: break-word;
+}
+
+/* ---------- Rodapé ---------- */
+footer.site {
+  border-top: 1px solid var(--line);
+  padding: 30px 0 60px;
+  font-family: var(--sans);
+  font-size: 12.5px;
+  color: var(--faint);
+}
+footer.site .wrap {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+footer.site a { color: var(--muted); }
+
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 3px; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .masthead-inner > *, .artigo-head > * { animation: rise .6s cubic-bezier(.2,.7,.2,1) both; }
+  .masthead-inner > *:nth-child(2), .artigo-head > *:nth-child(2) { animation-delay: .05s; }
+  .masthead-inner > *:nth-child(3), .artigo-head > *:nth-child(3) { animation-delay: .1s; }
+  .masthead-inner > *:nth-child(4), .artigo-head > *:nth-child(4) { animation-delay: .15s; }
+  @keyframes rise { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+}
