@@ -1,27 +1,6 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Oswaldo Prezotti — Direito Penal e Direito Digital</title>
-  <meta name="description" content="Oswaldo Prezotti, estudante de Direito e pesquisador de crimes cibernéticos. Artigos semanais sobre crimes contra a honra, exposição de intimidade e golpes na internet, sempre com a base legal citada.">
-  <link rel="canonical" href="https://cybercrimesprezotti.com.br/">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚖️</text></svg>">
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-
-<div class="topbar">
-  <div class="wrap">
-    <a class="brand" href="index.html">Oswaldo Prezotti</a>
-    <nav>
-      <a href="#artigos">Artigos</a>
-      <a href="#sobre">Sobre</a>
-      <a href="#contato">Contato</a>
-    </nav>
-  </div>
-</div>
-
+---
+layout: default
+---
 <header class="masthead">
   <div class="masthead-inner">
     <div class="kicker-row">
@@ -47,13 +26,14 @@
       <h2 class="sec-title">Artigos</h2>
     </div>
     <ul class="artigos">
-      <!-- Para adicionar um artigo novo: copie este bloco <li>, ajuste data, título, resumo e link -->
+      {% for post in site.posts %}
       <li>
-        <span class="data">19 de julho de 2026</span>
-        <h3><a href="crimes-contra-honra-na-internet.html">Crimes contra a honra na internet: por que a honra subjetiva é tão frágil</a></h3>
-        <p class="resumo">Calúnia, difamação e injúria ganharam alcance inédito nas redes sociais — e é justamente a honra subjetiva, a dimensão mais íntima da honra, que se revela a mais exposta e a mais difícil de reparar no ambiente digital.</p>
-        <a class="ler" href="crimes-contra-honra-na-internet.html">Ler o artigo →</a>
+        <span class="data">{% if post.data_extenso %}{{ post.data_extenso }}{% else %}{{ post.date | date: "%d/%m/%Y" }}{% endif %}</span>
+        <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+        {% if post.lede %}<p class="resumo">{{ post.lede }}</p>{% endif %}
+        <a class="ler" href="{{ post.url | relative_url }}">Ler o artigo →</a>
       </li>
+      {% endfor %}
     </ul>
   </section>
 
@@ -81,13 +61,3 @@
   </section>
 
 </main>
-
-<footer class="site">
-  <div class="wrap">
-    <span>© 2026 Oswaldo Prezotti · Conteúdo educativo sobre Direito Penal e Digital</span>
-    <span>cybercrimesprezotti.com.br</span>
-  </div>
-</footer>
-
-</body>
-</html>

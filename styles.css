@@ -269,6 +269,58 @@ article.artigo ul { max-width: var(--measure); padding-left: 22px; margin: 0 0 1
 article.artigo li { margin-bottom: 10px; }
 article.artigo strong { font-weight: 600; }
 article.artigo em { font-style: italic; }
+article.artigo h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 32px 0 10px;
+  letter-spacing: -0.005em;
+}
+article.artigo blockquote {
+  border-left: 3px solid var(--line-strong);
+  margin: 22px 0;
+  padding: 4px 0 4px 20px;
+  color: var(--muted);
+  font-size: 16.5px;
+}
+article.artigo blockquote p { margin-bottom: 10px; }
+article.artigo hr {
+  border: 0;
+  border-top: 1px solid var(--line);
+  margin: 40px 0;
+}
+article.artigo table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 15px;
+  margin: 24px 0;
+  display: block;
+  overflow-x: auto;
+}
+article.artigo th {
+  font-family: var(--sans);
+  font-size: 11.5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 700;
+  text-align: left;
+  padding: 10px 14px;
+  background: var(--surface-2);
+  border-bottom: 1px solid var(--line-strong);
+}
+article.artigo td {
+  padding: 11px 14px;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+article.artigo code {
+  font-family: 'Cascadia Code', Consolas, monospace;
+  font-size: 0.85em;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  padding: 1px 6px;
+  border-radius: 4px;
+}
 
 /* Caixa do autor */
 .autor {

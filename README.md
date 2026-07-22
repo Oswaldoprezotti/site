@@ -2,30 +2,36 @@
 
 Site pessoal de Oswaldo Prezotti — artigos semanais educativos sobre Direito Penal e Direito Digital (crimes cibernéticos).
 
-Hospedado no GitHub Pages com domínio registrado no Registro.br.
+Hospedado no **GitHub Pages** (gratuito, sem servidor) com **Jekyll** e domínio registrado no **Registro.br**.
+
+## Como publicar um artigo novo
+
+1. Crie um arquivo `_posts/AAAA-MM-DD-titulo-curto.md` seguindo o [MODELO-ARTIGO.md](MODELO-ARTIGO.md).
+2. `git add -A && git commit -m "Artigo: título" && git push`
+3. Pronto. A capa, o feed RSS e o sitemap atualizam sozinhos em 1-2 minutos.
 
 ## Estrutura
 
-| Arquivo | Função |
+| Caminho | Função |
 |---|---|
-| `index.html` | Página inicial: lista de artigos, sobre, contato |
-| `styles.css` | Folha de estilo única de todo o site |
-| `artigo-modelo.html` | Modelo para criar artigos novos |
-| `crimes-contra-honra-na-internet.html` | Artigo publicado em 19/07/2026 |
-| `CNAME` | Domínio customizado do GitHub Pages (não apagar) |
+| `_config.yml` | Configuração do site (título, descrição, plugins) |
+| `_layouts/default.html` | Esqueleto de toda página: head, barra superior, rodapé |
+| `_layouts/artigo.html` | Layout de artigo: cabeçalho, caixa de autor, aviso legal |
+| `_posts/*.md` | Os artigos — um arquivo por artigo, nada mais a editar |
+| `index.html` | Capa: apresentação + lista automática de artigos + contato |
+| `styles.css` | Folha de estilo única (com modo claro/escuro automático) |
+| `404.html` | Página de erro para endereços inexistentes |
+| `MODELO-ARTIGO.md` | Modelo comentado para criar artigos (não publicado no site) |
+| `CLAUDE.md` | Documentação técnica para manutenção via Claude (não publicada) |
+| `CNAME` | Domínio customizado do GitHub Pages — **não apagar** |
 
-## Publicar um artigo novo (rotina semanal)
+## URLs geradas automaticamente
 
-1. Duplique `artigo-modelo.html` com um nome descritivo, ex.: `crimes-contra-honra-stf.html`.
-2. Cole o conteúdo gerado pela skill `artigo-semanal` na área marcada com `COLE AQUI O CONTEÚDO DO ARTIGO` e preencha título, data, subtítulo e referências (procure os marcadores `EDITAR`).
-3. No `index.html`, copie o bloco `<li>` da lista de artigos e ajuste data, título, resumo e link (o mais recente fica no topo).
-4. Suba os arquivos alterados no GitHub (upload pelo navegador ou `git push`) — o site atualiza sozinho em 1–2 minutos.
+- `https://cybercrimesprezotti.com.br/feed.xml` — feed RSS
+- `https://cybercrimesprezotti.com.br/sitemap.xml` — sitemap para buscadores
 
-## DNS (Registro.br)
+## Infraestrutura
 
-Zona do domínio `cybercrimesprezotti.com.br`:
-
-- 4 registros **A** na raiz (nome em branco): `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
-- 1 registro **CNAME** com nome `www` apontando para `SEUUSUARIO.github.io`
-
-Depois da propagação, marcar **Enforce HTTPS** em Settings → Pages.
+- Repositório: `Oswaldoprezotti/site` · GitHub Pages servindo o branch `main` (raiz)
+- DNS no Registro.br: 4 registros A na raiz (IPs do GitHub Pages) + CNAME `www` → `oswaldoprezotti.github.io`
+- HTTPS: certificado emitido e renovado automaticamente pelo GitHub; Enforce HTTPS ativado

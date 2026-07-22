@@ -1,0 +1,32 @@
+title: Oswaldo Prezotti
+tagline: Direito Penal e Direito Digital
+description: >-
+  Oswaldo Prezotti, estudante de Direito e pesquisador de crimes cibernéticos.
+  Artigos semanais sobre crimes contra a honra, exposição de intimidade e
+  golpes na internet, sempre com a base legal citada.
+url: "https://cybercrimesprezotti.com.br"
+lang: pt-BR
+timezone: America/Sao_Paulo
+author:
+  name: Oswaldo Prezotti
+  email: oswaldoprezotti01@gmail.com
+
+# Plugins nativamente suportados pelo GitHub Pages
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Todo arquivo em _posts/ usa o layout de artigo automaticamente
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: artigo
+
+# Arquivos que não devem ir para o site publicado
+exclude:
+  - README.md
+  - CLAUDE.md
+  - MODELO-ARTIGO.md

@@ -1,0 +1,33 @@
+---
+layout: default
+---
+<header class="masthead">
+  <div class="artigo-head">
+    <div class="kicker-row">
+      <span class="eyebrow">Direito Digital · Artigo</span>
+      <span class="rule"></span>
+      <span class="eyebrow" style="color:var(--faint)">{% if page.data_extenso %}{{ page.data_extenso }}{% else %}{{ page.date | date: "%d/%m/%Y" }}{% endif %}</span>
+    </div>
+    <h1>{% if page.title_html %}{{ page.title_html }}{% else %}{{ page.title }}{% endif %}</h1>
+    {% if page.lede %}<p class="lede">{{ page.lede }}</p>{% endif %}
+    <div class="meta-row">
+      <span><b>Autor</b> Oswaldo Prezotti</span>
+      <span><b>Ordenamento</b> Brasil</span>
+      <span><b>Uso</b> Educativo · não é consulta jurídica</span>
+    </div>
+  </div>
+</header>
+
+<article class="artigo">
+{{ content }}
+
+  <div class="autor">
+    <p><b>Oswaldo Prezotti</b> é estudante de Direito na Faculdade Aprendiz, em Barbacena, Minas Gerais. Pesquisa Direito Penal e Direito Digital, com ênfase nos crimes praticados pela internet, e escreve semanalmente com finalidade educativa.</p>
+    <p>Contato: <a href="mailto:oswaldoprezotti01@gmail.com">oswaldoprezotti01@gmail.com</a> · <a href="https://www.instagram.com/Oswaldo_Prezotti" rel="noopener" target="_blank">@Oswaldo_Prezotti</a></p>
+  </div>
+
+  <div class="disclaimer">
+    <span class="eyebrow">Aviso</span>
+    <p>Este texto tem finalidade exclusivamente educativa e informativa. Não constitui aconselhamento jurídico nem substitui a consulta a um(a) advogado(a). Cada situação concreta possui particularidades que exigem análise profissional individualizada. O autor é estudante de Direito e escreve na condição de pesquisador do tema.</p>
+  </div>
+</article>
